@@ -186,8 +186,8 @@ export function DistributionPage() {
           </div>
 
           {selectedShop && (
-            <div className="mt-4 rounded-xl border border-emerald-100 bg-emerald-50/40 p-3 text-xs">
-              <p className="font-semibold text-emerald-900">{selectedShop.name}</p>
+            <div className="mt-4 rounded-xl border border-sky-100 bg-gradient-to-br from-sky-50/80 to-orange-50/50 p-3 text-xs shadow-sm">
+              <p className="font-semibold text-[var(--color-cg-green-900)]">{selectedShop.name}</p>
               <p className="mt-1 text-slate-600">License: {selectedShop.licenseNo}</p>
             </div>
           )}
@@ -200,7 +200,7 @@ export function DistributionPage() {
             <div className="space-y-4">
               <div>
                 <p className="mb-2 text-xs font-semibold uppercase text-slate-500">District depot (selected district)</p>
-                <div className="max-h-48 space-y-1 overflow-y-auto rounded-lg border border-emerald-100 bg-white p-2">
+                <div className="max-h-48 space-y-1 overflow-y-auto rounded-lg border border-sky-100 bg-white p-2 shadow-inner">
                   {Object.keys(distInv).length === 0 ? (
                     <p className="text-xs text-slate-500">No stock at this district yet — issue from state first.</p>
                   ) : (

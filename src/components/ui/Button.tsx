@@ -2,12 +2,11 @@ import { clsx } from "clsx";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
 const variants = {
-  primary:
-    "bg-[var(--color-cg-green-800)] text-white hover:bg-[var(--color-cg-green-700)] shadow-md shadow-emerald-900/20",
+  primary: "btn-primary-3d",
   secondary:
-    "bg-white text-[var(--color-cg-green-900)] border border-emerald-200 hover:bg-emerald-50",
-  ghost: "text-slate-600 hover:bg-emerald-50/80",
-  danger: "bg-red-600 text-white hover:bg-red-500",
+    "bg-white text-[var(--color-cg-green-900)] border border-sky-200/90 shadow-sm hover:bg-sky-50/80 hover:shadow-md",
+  ghost: "text-slate-600 hover:bg-sky-50/90",
+  danger: "bg-red-600 text-white shadow-md hover:bg-red-500 hover:shadow-lg",
 };
 
 export function Button({

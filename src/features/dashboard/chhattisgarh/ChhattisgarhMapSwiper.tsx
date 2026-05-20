@@ -13,25 +13,17 @@ import type { StateIssue } from "../../../types";
 import { ChartShell } from "../../../components/ui/ChartShell";
 import { useChartHeight } from "../../../hooks/useChartHeight";
 import { echartsTheme } from "../../../utils/chartTheme";
-import { parseDistrictBlockWorkbook } from "../../../utils/excel";
-import { districtIssueTotals } from "../../../utils/stats";
-import { titleDistrictLabel, toGeoDistrictName } from "./districtGeoAliases";
+import {
+  CG_DISTRICTS_GEOJSON_URL,
+  DISTRICTS_JSON_URL,
+  districtMapRowsFromJson,
+  rowsFromIssuesOnly,
+  type ChhattisgarhDistrictsFile,
+  type DistrictMapRow,
+} from "../../../utils/districtData";
 import { buildSyntheticCgDistrictGeoJson } from "./syntheticCgGeoJson";
 
 const MAP_NAME = "cgDistricts";
-const GEO_JSON_URL = "/data/cg-districts.geojson";
-const EXCEL_URL = "/data/chhattisgarh-district-block-list.xlsx";
-
-function normKey(s: string): string {
-  return s.trim().toLowerCase();
-}
-
-/** Dummy “issue / index” when a district has no recorded issues (stable per name). */
-function hashDummy(name: string): number {
-  let h = 0;
-  for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
-  return 12 + (h % 188);
-}
 
 function normalizeGeoForEcharts(gj: {
   type?: string;
@@ -56,25 +48,7 @@ function normalizeGeoForEcharts(gj: {
   } as Parameters<typeof echarts.registerMap>[1];
 }
 
-export type DistrictMapRow = {
-  district: string;
-  mapName: string;
-  label: string;
-  code?: number;
-  blocks: number;
-  value: number;
-};
-
-function rowsFromIssuesOnly(issues: StateIssue[]): DistrictMapRow[] {
-  const totals = districtIssueTotals(issues);
-  return totals.map((t) => ({
-    district: t.name,
-    mapName: toGeoDistrictName(t.name),
-    label: titleDistrictLabel(t.name),
-    blocks: 0,
-    value: t.value,
-  }));
-}
+export type { DistrictMapRow } from "../../../utils/districtData";
 
 export function ChhattisgarhMapSwiper({ issues, mapHeight }: { issues: StateIssue[]; mapHeight?: number }) {
   const apexH = useChartHeight(280, 340, 400);
@@ -87,38 +61,29 @@ export function ChhattisgarhMapSwiper({ issues, mapHeight }: { issues: StateIssu
     let alive = true;
     (async () => {
       try {
-        const res = await fetch(EXCEL_URL);
+        const res = await fetch(DISTRICTS_JSON_URL);
         if (!res.ok) {
           if (!alive) return;
           setRows(rowsFromIssuesOnly(issues));
           setLoadErr(
-            `Workbook not found at ${EXCEL_URL} (${res.status}). Showing districts from issues only; add the Excel file under public/data/.`,
+            `District JSON not found at ${DISTRICTS_JSON_URL} (${res.status}). Run npm run data:build-districts to generate it.`,
           );
           return;
         }
-        const buf = await res.arrayBuffer();
-        const districts = parseDistrictBlockWorkbook(buf);
-        const totals = districtIssueTotals(issues);
-        const byName = new Map(totals.map((t) => [normKey(t.name), t.value]));
-
-        const merged: DistrictMapRow[] = districts.map((d) => {
-          const v = byName.get(normKey(d.name)) ?? hashDummy(d.name);
-          return {
-            district: d.name,
-            mapName: toGeoDistrictName(d.name),
-            label: titleDistrictLabel(d.name),
-            code: d.code,
-            blocks: d.blocks.length,
-            value: v,
-          };
-        });
+        const file = (await res.json()) as ChhattisgarhDistrictsFile;
+        if (!file?.districts?.length) {
+          if (!alive) return;
+          setRows(rowsFromIssuesOnly(issues));
+          setLoadErr("District JSON is empty or invalid.");
+          return;
+        }
         if (!alive) return;
-        setRows(merged.sort((a, b) => a.district.localeCompare(b.district)));
+        setRows(districtMapRowsFromJson(file, issues));
         setLoadErr(null);
       } catch (e) {
         if (!alive) return;
         setRows(rowsFromIssuesOnly(issues));
-        setLoadErr(e instanceof Error ? e.message : "Failed to load workbook");
+        setLoadErr(e instanceof Error ? e.message : "Failed to load district JSON");
       }
     })();
     return () => {
@@ -131,7 +96,7 @@ export function ChhattisgarhMapSwiper({ issues, mapHeight }: { issues: StateIssu
     let cancelled = false;
     (async () => {
       try {
-        const res = await fetch(GEO_JSON_URL);
+        const res = await fetch(CG_DISTRICTS_GEOJSON_URL);
         if (res.ok) {
           const raw = await res.json();
           if (cancelled) return;
@@ -185,15 +150,15 @@ export function ChhattisgarhMapSwiper({ issues, mapHeight }: { issues: StateIssu
         calculable: false,
         inRange: {
           color: [
-            "#f0fdf4",
-            "#dcfce7",
-            "#bbf7d0",
-            "#86efac",
-            "#4ade80",
-            "#22c55e",
-            "#16a34a",
-            "#15803d",
-            "#166534",
+            "#eff6ff",
+            "#dbeafe",
+            "#bfdbfe",
+            "#93c5fd",
+            "#fdba74",
+            "#fb923c",
+            "#f97316",
+            "#ea580c",
+            "#c2410c",
           ],
         },
         textStyle: { color: theme.textStyle.color, fontSize: 11 },
@@ -221,15 +186,15 @@ export function ChhattisgarhMapSwiper({ issues, mapHeight }: { issues: StateIssu
             focus: "self",
             label: { show: true, color: "#ffffff", fontSize: 10, fontWeight: 600 },
             itemStyle: {
-              areaColor: "#4ade80",
-              borderColor: "#14532d",
+              areaColor: "#fb923c",
+              borderColor: "#1e4976",
               borderWidth: 2,
-              shadowBlur: 12,
-              shadowColor: "rgba(22,163,74,0.45)",
+              shadowBlur: 14,
+              shadowColor: "rgba(251,146,60,0.5)",
             },
           },
           blur: {
-            itemStyle: { areaColor: "rgba(240,253,244,0.35)" },
+            itemStyle: { areaColor: "rgba(239,246,255,0.35)" },
           },
           data: rows.map((r) => ({
             name: r.mapName,
@@ -244,8 +209,8 @@ export function ChhattisgarhMapSwiper({ issues, mapHeight }: { issues: StateIssu
 
   const apexSeries = useMemo(
     () => [
-      { name: "Issues / index", data: rows.map((r) => r.value) },
-      { name: "Blocks (count)", data: rows.map((r) => r.blocks) },
+      { name: "Issue volume", data: rows.map((r) => r.value) },
+      { name: "Block activity", data: rows.map((r) => r.blockActivity) },
     ],
     [rows],
   );
@@ -263,17 +228,17 @@ export function ChhattisgarhMapSwiper({ issues, mapHeight }: { issues: StateIssu
       xaxis: { categories: rows.map((r) => r.label) },
       legend: { position: "bottom" },
       tooltip: { shared: true, intersect: false },
-      colors: ["#0f4d36", "#c9a227"],
+      colors: ["#3b82f6", "#fb923c"],
     }),
     [rows],
   );
 
   return (
-    <div className="panel-card min-w-0 rounded-2xl border border-emerald-100 bg-white p-3 shadow-sm sm:p-4">
+    <div className="panel-card relative min-w-0 p-3 sm:p-4">
       <p className="mb-1 text-sm font-semibold text-slate-800">Chhattisgarh overview</p>
       <p className="mb-2 hidden text-xs text-slate-500 sm:block">
-        Swipe for the district map and bar chart. Data from{" "}
-        <code className="break-all rounded bg-slate-100 px-1 text-[10px] sm:text-xs">public/data/chhattisgarh-district-block-list.xlsx</code>
+        Swipe for the district map and bar chart. District list from{" "}
+        <code className="break-all rounded bg-slate-100 px-1 text-[10px] sm:text-xs">public/data/chhattisgarh-districts.json</code>
       </p>
       <p className="mb-2 text-xs text-slate-500 sm:hidden">Swipe left/right for map and district bars.</p>
       {loadErr ? (

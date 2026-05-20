@@ -16,22 +16,22 @@ export function DataTable<T>({
 }) {
   if (loading) {
     return (
-      <div className="brand-table-empty flex min-h-[160px] items-center justify-center rounded-xl border border-dashed border-emerald-200 bg-emerald-50/30">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-emerald-600 border-t-transparent" />
+      <div className="brand-table-empty flex min-h-[160px] items-center justify-center rounded-xl border border-dashed">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-[var(--color-cg-blue-500)] border-t-transparent" />
       </div>
     );
   }
   if (!rows.length) {
     return (
-      <div className="brand-table-empty flex min-h-[160px] items-center justify-center rounded-xl border border-dashed border-emerald-200 bg-white p-6 text-center text-sm text-slate-500">
+      <div className="brand-table-empty flex min-h-[160px] items-center justify-center rounded-xl border border-dashed p-6 text-center text-sm text-slate-500">
         {empty ?? "No records"}
       </div>
     );
   }
   return (
-    <div className="brand-table overflow-x-auto rounded-xl border border-emerald-100 bg-white">
-      <table className="min-w-full divide-y divide-emerald-100 text-sm">
-        <thead className="bg-emerald-50/80">
+    <div className="brand-table overflow-x-auto rounded-xl border bg-white">
+      <table className="min-w-full divide-y divide-sky-100 text-sm">
+        <thead>
           <tr>
             {columns.map((c) => (
               <th
@@ -47,9 +47,9 @@ export function DataTable<T>({
             ))}
           </tr>
         </thead>
-        <tbody className="divide-y divide-emerald-50 bg-white">
+        <tbody className="divide-y divide-sky-50 bg-white">
           {rows.map((row) => (
-            <tr key={rowKey(row)} className="transition-colors hover:bg-emerald-50/40">
+            <tr key={rowKey(row)} className="transition-colors hover:bg-sky-50/50">
               {columns.map((c) => (
                 <td key={c.key} className={clsx("whitespace-nowrap px-4 py-3 text-slate-700", c.className)}>
                   {c.render(row)}

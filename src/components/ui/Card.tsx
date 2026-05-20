@@ -15,11 +15,11 @@ export function Card({
   return (
     <div
       className={clsx(
-        "panel-card brand-card min-w-0 rounded-2xl border border-emerald-100/80 bg-white p-4 shadow-sm sm:p-5",
-        "transition-shadow duration-300 hover:shadow-md",
+        "panel-card brand-card relative min-w-0 overflow-hidden p-4 sm:p-5",
         className,
       )}
     >
+      <div className="relative z-[1]">
       {(title || action) && (
         <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
           {title && (
@@ -31,6 +31,7 @@ export function Card({
         </div>
       )}
       {children}
+      </div>
     </div>
   );
 }

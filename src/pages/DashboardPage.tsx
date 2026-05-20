@@ -68,7 +68,7 @@ export function DashboardPage() {
       value: Math.round(scoped.totalB).toLocaleString(),
       hint: scoped.totalHint,
       icon: Warehouse,
-      tone: "emerald",
+      tone: "blue",
     },
     {
       title: role === "admin" ? "Issued to districts" : "Received from state",
@@ -99,7 +99,7 @@ export function DashboardPage() {
 
       {boot ? (
         <div className="flex h-48 items-center justify-center">
-          <div className="h-10 w-10 animate-spin rounded-full border-2 border-emerald-600 border-t-transparent" />
+          <div className="h-10 w-10 animate-spin rounded-full border-2 border-[var(--color-cg-blue-500)] border-t-transparent" />
         </div>
       ) : (
         <>
@@ -114,19 +114,20 @@ export function DashboardPage() {
                   </div>
                   <div
                     className={
-                      c.tone === "emerald"
-                        ? "rounded-xl bg-emerald-100 p-3 text-emerald-800"
+                      c.tone === "blue"
+                        ? "stat-icon-blue rounded-xl p-3"
                         : c.tone === "amber"
-                          ? "rounded-xl bg-amber-100 p-3 text-amber-900"
+                          ? "stat-icon-orange rounded-xl p-3"
                           : c.tone === "red"
-                            ? "rounded-xl bg-red-100 p-3 text-red-800"
+                            ? "rounded-xl bg-red-100 p-3 text-red-800 shadow-sm"
                             : "rounded-xl bg-slate-100 p-3 text-slate-700"
                     }
                   >
                     <c.icon className="h-6 w-6" />
                   </div>
                 </div>
-                <div className="pointer-events-none absolute -right-6 -bottom-10 h-32 w-32 rounded-full bg-emerald-500/5" />
+                <div className="pointer-events-none absolute -right-6 -bottom-10 h-32 w-32 rounded-full bg-sky-400/10" />
+                <div className="pointer-events-none absolute -left-4 -top-6 h-20 w-20 rounded-full bg-orange-300/15" />
               </Card>
             ))}
           </div>

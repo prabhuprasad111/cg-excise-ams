@@ -29,7 +29,7 @@ export function Modal({
       />
       <div
         className={clsx(
-          "panel-card relative z-10 max-h-[min(90vh,100dvh)] w-full max-w-[100vw] overflow-y-auto rounded-2xl border border-emerald-100 bg-white p-4 shadow-2xl sm:max-h-[90vh] sm:p-6",
+          "panel-card relative z-10 max-h-[min(90vh,100dvh)] w-full max-w-[100vw] overflow-y-auto p-4 sm:max-h-[90vh] sm:p-6",
           wide ? "sm:max-w-3xl" : "sm:max-w-lg",
         )}
       >
@@ -41,7 +41,7 @@ export function Modal({
         </div>
         <div className="text-sm text-slate-700">{children}</div>
         {footer && (
-          <div className="mt-6 flex flex-col-reverse gap-2 border-t border-emerald-100 pt-4 sm:flex-row sm:flex-wrap sm:justify-end">
+          <div className="mt-6 flex flex-col-reverse gap-2 border-t border-sky-100 pt-4 sm:flex-row sm:flex-wrap sm:justify-end">
             {footer}
           </div>
         )}

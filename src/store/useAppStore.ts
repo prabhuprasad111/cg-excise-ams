@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { defaultDistricts, initialCentralStock } from "../data/seed";
+import { buildDemoMovementData } from "../data/demoMovement";
+import { defaultDistricts } from "../data/seed";
 import { buildVillagesAndShops } from "../utils/generateLocations";
 import { newId } from "../utils/id";
 import { LOW_STOCK_DEFAULT } from "../utils/units";
@@ -79,6 +80,7 @@ function logAudit(
 }
 
 const { villages: seedVillages, shops: seedShops } = rebuildGeo(defaultDistricts);
+const demoSeed = buildDemoMovementData();
 
 export const useAppStore = create<AppState>()(
   persist(
@@ -88,11 +90,11 @@ export const useAppStore = create<AppState>()(
       role: "admin",
       officerDistrictId: "dist_raipur",
       lowStockThresholdBottles: LOW_STOCK_DEFAULT,
-      centralStock: initialCentralStock,
-      districtInventory: {},
-      shopInventory: {},
-      issues: [],
-      distributions: [],
+      centralStock: demoSeed.centralStock,
+      districtInventory: demoSeed.districtInventory,
+      shopInventory: demoSeed.shopInventory,
+      issues: demoSeed.issues,
+      distributions: demoSeed.distributions,
       auditLogs: [],
       districts: defaultDistricts,
       villages: seedVillages,
@@ -270,6 +272,32 @@ export const useAppStore = create<AppState>()(
     }),
     {
       name: "cg-excise-ams-v1",
+      version: 2,
+      migrate: (persisted, version) => {
+        if (version < 2 && persisted && typeof persisted === "object") {
+          const state = persisted as {
+            issues?: StateIssue[];
+            distributions?: DistributionRecord[];
+            districtInventory?: Record<string, Record<string, number>>;
+          };
+          const empty =
+            !state.issues?.length &&
+            !state.distributions?.length &&
+            Object.keys(state.districtInventory ?? {}).length === 0;
+          if (empty) {
+            const demo = buildDemoMovementData();
+            return {
+              ...persisted,
+              centralStock: demo.centralStock,
+              districtInventory: demo.districtInventory,
+              shopInventory: demo.shopInventory,
+              issues: demo.issues,
+              distributions: demo.distributions,
+            };
+          }
+        }
+        return persisted;
+      },
       partialize: (s) => ({
         darkMode: s.darkMode,
         sidebarCollapsed: s.sidebarCollapsed,

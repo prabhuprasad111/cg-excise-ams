@@ -110,7 +110,7 @@ export function SettingsPage() {
       <p className="page-lead mb-6 text-sm text-slate-600">
         Upload an Excel workbook with district and block columns (simulating CG master data). Falls back to built-in mock hierarchy when
         cleared. Reference:{" "}
-        <a className="text-emerald-700 underline" href="https://excise.cg.nic.in/Home" target="_blank" rel="noreferrer">
+        <a className="text-[var(--color-cg-blue-700)] underline hover:text-[var(--color-cg-orange-600)]" href="https://excise.cg.nic.in/Home" target="_blank" rel="noreferrer">
           Excise Department Chhattisgarh
         </a>
         .
@@ -137,7 +137,7 @@ export function SettingsPage() {
               Reset to mock data
             </Button>
           </div>
-          {hierarchyFromExcel && <p className="mt-3 text-xs font-medium text-emerald-700">Using imported hierarchy.</p>}
+          {hierarchyFromExcel && <p className="mt-3 text-xs font-medium text-[var(--color-cg-blue-700)]">Using imported hierarchy.</p>}
         </Card>
 
         <Card title="Role simulation">

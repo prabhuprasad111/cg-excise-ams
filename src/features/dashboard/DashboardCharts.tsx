@@ -6,7 +6,7 @@ import { ChartShell } from "../../components/ui/ChartShell";
 import { useChartHeight } from "../../hooks/useChartHeight";
 import { ChhattisgarhMapSwiper } from "./chhattisgarh/ChhattisgarhMapSwiper";
 import { movementTrendByDay, stockByCategory } from "../../utils/stats";
-import { echartsTheme } from "../../utils/chartTheme";
+import { brandChartColors, echartsTheme } from "../../utils/chartTheme";
 import { bottlesEquivalent } from "../../utils/units";
 import { useAppStore } from "../../store/useAppStore";
 
@@ -93,8 +93,8 @@ export function DashboardCharts() {
           smooth: true,
           symbol: "circle",
           symbolSize: 6,
-          lineStyle: { width: 2, color: "#0f4d36" },
-          itemStyle: { color: "#0f4d36" },
+          lineStyle: { width: 2, color: brandChartColors.blueDeep },
+          itemStyle: { color: brandChartColors.blueDeep },
           areaStyle: {
             color: {
               type: "linear",
@@ -103,8 +103,8 @@ export function DashboardCharts() {
               x2: 0,
               y2: 1,
               colorStops: [
-                { offset: 0, color: "rgba(22, 101, 74, 0.45)" },
-                { offset: 1, color: "rgba(22, 101, 74, 0.05)" },
+                { offset: 0, color: "rgba(59, 130, 246, 0.42)" },
+                { offset: 1, color: "rgba(59, 130, 246, 0.05)" },
               ],
             },
           },
@@ -116,8 +116,8 @@ export function DashboardCharts() {
           smooth: true,
           symbol: "circle",
           symbolSize: 6,
-          lineStyle: { width: 2, color: "#c9a227" },
-          itemStyle: { color: "#c9a227" },
+          lineStyle: { width: 2, color: brandChartColors.orange },
+          itemStyle: { color: brandChartColors.orange },
           areaStyle: {
             color: {
               type: "linear",
@@ -126,8 +126,8 @@ export function DashboardCharts() {
               x2: 0,
               y2: 1,
               colorStops: [
-                { offset: 0, color: "rgba(201, 162, 39, 0.4)" },
-                { offset: 1, color: "rgba(201, 162, 39, 0.05)" },
+                { offset: 0, color: "rgba(251, 146, 60, 0.42)" },
+                { offset: 1, color: "rgba(251, 146, 60, 0.05)" },
               ],
             },
           },
@@ -165,7 +165,7 @@ export function DashboardCharts() {
         align: "left",
         style: { fontSize: "13px", fontWeight: 600, color: "#475569" },
       },
-      colors: ["#3b82f6", "#22c55e", "#f59e0b"],
+      colors: [brandChartColors.blueDeep, brandChartColors.orange, brandChartColors.sky],
       stroke: { width: 2 },
       fill: { opacity: 0.18 },
       markers: { size: 4, hover: { size: 6 } },
@@ -244,9 +244,9 @@ export function DashboardCharts() {
           type: "bar",
           barMaxWidth: 36,
           data: [
-            { value: Math.round(stateHeld), itemStyle: { color: "#0f4d36", borderRadius: [0, 6, 6, 0] } },
-            { value: Math.round(districtHeld), itemStyle: { color: "#16634a", borderRadius: [0, 6, 6, 0] } },
-            { value: Math.round(shopHeld), itemStyle: { color: "#c9a227", borderRadius: [0, 6, 6, 0] } },
+            { value: Math.round(stateHeld), itemStyle: { color: brandChartColors.blueDeep, borderRadius: [0, 6, 6, 0] } },
+            { value: Math.round(districtHeld), itemStyle: { color: brandChartColors.blue, borderRadius: [0, 6, 6, 0] } },
+            { value: Math.round(shopHeld), itemStyle: { color: brandChartColors.orange, borderRadius: [0, 6, 6, 0] } },
           ],
         },
       ],
@@ -255,12 +255,12 @@ export function DashboardCharts() {
 
   return (
     <div className="grid min-w-0 grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-2">
-      <div className="panel-card min-w-0 rounded-2xl border border-emerald-100 bg-white p-3 shadow-sm sm:p-4">
+      <div className="panel-card relative min-w-0 p-3 sm:p-4">
         <ChartShell size="md">
           <ReactECharts option={pieOption} style={{ height: "100%", width: "100%" }} opts={chartOpts} />
         </ChartShell>
       </div>
-      <div className="panel-card min-w-0 rounded-2xl border border-emerald-100 bg-white p-3 shadow-sm sm:p-4">
+      <div className="panel-card relative min-w-0 p-3 sm:p-4">
         <ChartShell size="md">
           <ReactECharts
             key={`spline-${issues.length}-${distributions.length}-${chartH}`}
@@ -270,12 +270,12 @@ export function DashboardCharts() {
           />
         </ChartShell>
       </div>
-      <div className="panel-card min-w-0 rounded-2xl border border-emerald-100 bg-white p-3 shadow-sm sm:p-4">
+      <div className="panel-card relative min-w-0 p-3 sm:p-4">
         <ChartShell size="sm">
           <ReactECharts option={flowOption} style={{ height: "100%", width: "100%" }} opts={chartOpts} />
         </ChartShell>
       </div>
-      <div className="panel-card min-w-0 rounded-2xl border border-emerald-100 bg-white p-3 shadow-sm sm:p-4">
+      <div className="panel-card relative min-w-0 p-3 sm:p-4">
         <ChartShell size="sm">
           <Chart
             key={`radar-${issues.length}-${distributions.length}-${chartH}`}

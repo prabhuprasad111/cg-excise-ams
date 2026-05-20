@@ -19,7 +19,7 @@ export function ToastHost() {
             key={t.id}
             className={clsx(
               "pointer-events-auto flex gap-3 rounded-xl border p-4 shadow-lg backdrop-blur-md transition-all duration-300",
-              t.variant === "success" && "border-emerald-200 bg-emerald-50/95 text-emerald-950",
+              t.variant === "success" && "border-sky-200 bg-sky-50/95 text-sky-950",
               t.variant === "error" && "border-red-200 bg-red-50/95 text-red-950",
               t.variant === "info" && "border-slate-200 bg-white/95 text-slate-900",
             )}

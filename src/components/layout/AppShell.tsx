@@ -61,9 +61,9 @@ export function AppShell() {
         onClick={onNavigate}
         className={({ isActive }) =>
           clsx(
-            "flex items-center rounded-lg text-sm font-medium transition-colors",
+            "brand-nav-link flex items-center rounded-lg text-sm font-medium transition-all duration-200",
             collapsed ? "justify-center px-2 py-2.5" : "gap-3 px-3 py-2.5",
-            isActive ? "bg-emerald-800 text-white" : "text-emerald-100/90 hover:bg-emerald-800/50",
+            isActive && "brand-nav-active font-semibold shadow-md",
           )
         }
       >
@@ -93,26 +93,26 @@ export function AppShell() {
       <aside
         className={clsx(
           "fixed left-0 top-0 z-50 flex h-full w-[min(100vw,18rem)] max-w-[85vw] flex-col overflow-hidden md:hidden",
-          "brand-sidebar border-r border-emerald-200/60 bg-[var(--color-cg-green-900)] text-emerald-50 shadow-xl",
+          "brand-sidebar border-r shadow-xl",
           "transition-transform duration-300 ease-in-out",
           mobileNavOpen ? "translate-x-0" : "-translate-x-full pointer-events-none",
         )}
         aria-label="Mobile navigation"
         aria-hidden={!mobileNavOpen}
       >
-        <div className="flex items-center justify-between gap-2 border-b border-emerald-800/80 px-4 py-4">
+        <div className="brand-sidebar-divider flex items-center justify-between gap-2 border-b px-4 py-4">
           <div className="flex min-w-0 items-center gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--color-cg-gold-500)] text-[var(--color-cg-green-900)]">
+            <div className="brand-logo-tile flex h-10 w-10 shrink-0 items-center justify-center rounded-xl">
               <BarChart3 className="h-6 w-6" />
             </div>
             <div className="min-w-0">
-              <p className="text-xs font-medium uppercase tracking-widest text-emerald-300/90">Excise Dept.</p>
+              <p className="text-xs font-medium uppercase tracking-widest text-sky-200/90">Excise Dept.</p>
               <p className="truncate font-semibold text-white">CG Alcohol AMS</p>
             </div>
           </div>
           <button
             type="button"
-            className="shrink-0 rounded-lg p-2 text-emerald-100 hover:bg-emerald-800/50"
+            className="brand-nav-link shrink-0 rounded-lg p-2"
             aria-label="Close menu"
             onClick={() => setMobileNavOpen(false)}
           >
@@ -120,25 +120,25 @@ export function AppShell() {
           </button>
         </div>
         <nav className="flex flex-1 flex-col gap-1 overflow-y-auto p-3">{navLinks(false, () => setMobileNavOpen(false))}</nav>
-        <div className="border-t border-emerald-800/80 p-4 text-xs text-emerald-200/70">All Rights Reserved @KPMG</div>
+        <div className="brand-sidebar-divider border-t p-4 text-xs text-sky-200/70">All Rights Reserved @KPMG</div>
       </aside>
 
       <aside
         style={{ width: sidebarWidth }}
         className={clsx(
           "fixed left-0 top-0 z-40 hidden h-full flex-col overflow-hidden",
-          "brand-sidebar border-r border-emerald-200/60 bg-[var(--color-cg-green-900)] text-emerald-50 shadow-xl",
+          "brand-sidebar border-r shadow-xl",
           "transition-[width] duration-300 ease-in-out md:flex",
         )}
         aria-label="Main navigation"
       >
         <div
           className={clsx(
-            "flex shrink-0 items-center border-b border-emerald-800/80 py-5 transition-all duration-300",
+            "brand-sidebar-divider flex shrink-0 items-center border-b py-5 transition-all duration-300",
             sidebarCollapsed ? "justify-center px-2" : "gap-3 px-5",
           )}
         >
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--color-cg-gold-500)] text-[var(--color-cg-green-900)]">
+          <div className="brand-logo-tile flex h-10 w-10 shrink-0 items-center justify-center rounded-xl">
             <BarChart3 className="h-6 w-6" />
           </div>
           <div
@@ -147,7 +147,7 @@ export function AppShell() {
               sidebarCollapsed ? "w-0 opacity-0" : "w-auto opacity-100",
             )}
           >
-            <p className="text-xs font-medium uppercase tracking-widest text-emerald-300/90">Excise Dept.</p>
+            <p className="text-xs font-medium uppercase tracking-widest text-sky-200/90">Excise Dept.</p>
             <p className="font-semibold leading-tight whitespace-nowrap text-white">AMS Chhatisgarh</p>
           </div>
         </div>
@@ -158,14 +158,14 @@ export function AppShell() {
 
         <div
           className={clsx(
-            "shrink-0 border-t border-emerald-800/80 text-xs text-emerald-200/70 transition-all duration-300",
+            "brand-sidebar-divider shrink-0 border-t text-xs text-sky-200/70 transition-all duration-300",
             sidebarCollapsed ? "px-2 py-3 text-center" : "p-4",
           )}
         >
           {sidebarCollapsed ? (
             <span className="text-[10px] font-medium tracking-tight">KPMG</span>
           ) : (
-            "All Rights Reserved @KPMG"
+            "© KPMG. All rights reserved"
           )}
         </div>
       </aside>
@@ -174,13 +174,13 @@ export function AppShell() {
         style={{ paddingLeft: sidebarWidth }}
         className="flex min-h-screen w-full min-w-0 flex-1 flex-col transition-[padding-left] duration-300 ease-in-out max-md:!pl-0"
       >
-        <header className="brand-header sticky top-0 z-30 border-b border-emerald-200/70 bg-white/95 px-3 py-2 shadow-sm backdrop-blur-md sm:px-4 md:px-5 pt-[max(0.5rem,env(safe-area-inset-top))]">
+        <header className="brand-header sticky top-0 z-30 border-b px-3 py-2 sm:px-4 md:px-5 pt-[max(0.5rem,env(safe-area-inset-top))]">
           <div className="flex h-12 min-w-0 items-center justify-between gap-2 sm:h-14 sm:gap-3">
             <div className="flex min-w-0 flex-1 items-center gap-2">
               <button
                 type="button"
                 onClick={() => setMobileNavOpen(true)}
-                className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-emerald-200/90 text-slate-600 transition hover:bg-emerald-50 md:hidden"
+                className="brand-header-btn inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg md:hidden"
                 aria-label="Open menu"
                 aria-expanded={mobileNavOpen}
               >
@@ -189,7 +189,7 @@ export function AppShell() {
               <button
                 type="button"
                 onClick={toggleSidebarCollapsed}
-                className="hidden h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-emerald-200/90 text-slate-600 transition hover:bg-emerald-50 md:inline-flex"
+                className="brand-header-btn hidden h-9 w-9 shrink-0 items-center justify-center rounded-lg md:inline-flex"
                 aria-label={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
                 aria-expanded={!sidebarCollapsed}
               >
@@ -207,8 +207,8 @@ export function AppShell() {
                 <p className="text-xs text-slate-500">{role === "admin" ? "Full access" : "District scope"}</p>
               </div>
               <span
-                className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-emerald-200/90 text-emerald-700"
-                title="Light brand theme"
+                className="brand-header-btn inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[var(--color-cg-orange-600)]"
+                title="Orange & blue theme"
                 aria-hidden
               >
                 <Sun className="h-5 w-5" />
@@ -217,7 +217,7 @@ export function AppShell() {
           </div>
         </header>
 
-        <main className="content-surface flex-1 bg-[var(--color-cg-cream)] px-3 py-4 sm:px-4 sm:py-6 md:px-5 pb-[max(1rem,env(safe-area-inset-bottom))]">
+        <main className="content-surface flex-1 px-3 py-4 sm:px-4 sm:py-6 md:px-5 pb-[max(1rem,env(safe-area-inset-bottom))]">
           <div className="page-enter mx-auto w-full min-w-0 max-w-[100%]">
             <Outlet />
           </div>
@@ -232,7 +232,7 @@ function BadgePill({ role }: { role: string }) {
     <span
       className={clsx(
         "shrink-0 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide",
-        role === "admin" ? "bg-emerald-100 text-emerald-900" : "bg-amber-100 text-amber-900",
+        role === "admin" ? "brand-badge-admin" : "brand-badge-officer",
       )}
     >
       {role === "admin" ? "Admin" : "District Officer"}
