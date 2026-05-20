@@ -1,0 +1,998 @@
+{
+  "source": "chhattisgarh-district-block-list.xlsx",
+  "generatedAt": "2026-05-20T16:38:22.750Z",
+  "districtCount": 27,
+  "districts": [
+    {
+      "name": "BALOD",
+      "code": 646,
+      "issueQty": 790,
+      "blockActivity": 447,
+      "blocks": [
+        {
+          "name": "BALOD",
+          "code": 3629,
+          "activity": 54
+        },
+        {
+          "name": "DAUNDI",
+          "code": 3633,
+          "activity": 170
+        },
+        {
+          "name": "DAUNDILOHARA",
+          "code": 3634,
+          "activity": 108
+        },
+        {
+          "name": "GUNDARDEHI",
+          "code": 3636,
+          "activity": 69
+        },
+        {
+          "name": "GURUR",
+          "code": 3637,
+          "activity": 46
+        }
+      ]
+    },
+    {
+      "name": "BALODABAZAR",
+      "code": 644,
+      "issueQty": 639,
+      "blockActivity": 702,
+      "blocks": [
+        {
+          "name": "BALODABAZAR",
+          "code": 3695,
+          "activity": 62
+        },
+        {
+          "name": "BHATAPARA",
+          "code": 3696,
+          "activity": 163
+        },
+        {
+          "name": "BILAIGARH",
+          "code": 3697,
+          "activity": 49
+        },
+        {
+          "name": "KASDOL",
+          "code": 3703,
+          "activity": 107
+        },
+        {
+          "name": "PALARI",
+          "code": 3705,
+          "activity": 149
+        },
+        {
+          "name": "SIMGA",
+          "code": 3706,
+          "activity": 172
+        }
+      ]
+    },
+    {
+      "name": "BALRAMPUR",
+      "code": 649,
+      "issueQty": 611,
+      "blockActivity": 721,
+      "blocks": [
+        {
+          "name": "BALRAMPUR",
+          "code": 3718,
+          "activity": 75
+        },
+        {
+          "name": "KUSMI",
+          "code": 3721,
+          "activity": 138
+        },
+        {
+          "name": "RAJPUR",
+          "code": 3728,
+          "activity": 160
+        },
+        {
+          "name": "RAMCHANDRAPUR (RAMANUJGANJ)",
+          "code": 3730,
+          "activity": 84
+        },
+        {
+          "name": "SHANKARGARH",
+          "code": 3731,
+          "activity": 143
+        },
+        {
+          "name": "WADRAFNAGAR",
+          "code": 3735,
+          "activity": 121
+        }
+      ]
+    },
+    {
+      "name": "BASTAR",
+      "code": 374,
+      "issueQty": 797,
+      "blockActivity": 797,
+      "blocks": [
+        {
+          "name": "BAKAVAND",
+          "code": 3591,
+          "activity": 77
+        },
+        {
+          "name": "BASTANAR",
+          "code": 3592,
+          "activity": 112
+        },
+        {
+          "name": "BASTAR",
+          "code": 3593,
+          "activity": 174
+        },
+        {
+          "name": "DARBHA",
+          "code": 3594,
+          "activity": 167
+        },
+        {
+          "name": "JAGDALPUR",
+          "code": 3595,
+          "activity": 72
+        },
+        {
+          "name": "LOHANDIGUDA",
+          "code": 3598,
+          "activity": 153
+        },
+        {
+          "name": "TOKAPAL",
+          "code": 3603,
+          "activity": 42
+        }
+      ]
+    },
+    {
+      "name": "BEMETARA",
+      "code": 650,
+      "issueQty": 564,
+      "blockActivity": 457,
+      "blocks": [
+        {
+          "name": "BEMETARA",
+          "code": 3630,
+          "activity": 32
+        },
+        {
+          "name": "BERLA",
+          "code": 3631,
+          "activity": 125
+        },
+        {
+          "name": "NAWAGARH",
+          "code": 3638,
+          "activity": 168
+        },
+        {
+          "name": "SAJA",
+          "code": 3640,
+          "activity": 62
+        },
+        {
+          "name": "THANKHAMARIYA",
+          "code": 3314,
+          "activity": 70
+        }
+      ]
+    },
+    {
+      "name": "BIJAPUR",
+      "code": 636,
+      "issueQty": 548,
+      "blockActivity": 529,
+      "blocks": [
+        {
+          "name": "BHAIRAMGARH",
+          "code": 3614,
+          "activity": 72
+        },
+        {
+          "name": "BHOPAL PATTANAM",
+          "code": 3615,
+          "activity": 143
+        },
+        {
+          "name": "BIJAPUR",
+          "code": 3616,
+          "activity": 157
+        },
+        {
+          "name": "USUR",
+          "code": 3624,
+          "activity": 157
+        }
+      ]
+    },
+    {
+      "name": "BILASPUR",
+      "code": 375,
+      "issueQty": 131,
+      "blockActivity": 1116,
+      "blocks": [
+        {
+          "name": "BILASPUR",
+          "code": 3295,
+          "activity": 67
+        },
+        {
+          "name": "BILHA",
+          "code": 3604,
+          "activity": 138
+        },
+        {
+          "name": "GAURELLA-1",
+          "code": 3605,
+          "activity": 121
+        },
+        {
+          "name": "GAURELLA-2",
+          "code": 3606,
+          "activity": 154
+        },
+        {
+          "name": "KOTA",
+          "code": 3607,
+          "activity": 112
+        },
+        {
+          "name": "MARWAHI",
+          "code": 3609,
+          "activity": 87
+        },
+        {
+          "name": "MASTURI",
+          "code": 3610,
+          "activity": 195
+        },
+        {
+          "name": "PENDRA",
+          "code": 3289,
+          "activity": 29
+        },
+        {
+          "name": "PENDRAROAD",
+          "code": 3287,
+          "activity": 165
+        },
+        {
+          "name": "TAKHATPUR",
+          "code": 3613,
+          "activity": 48
+        }
+      ]
+    },
+    {
+      "name": "DANTEWADA",
+      "code": 376,
+      "issueQty": 967,
+      "blockActivity": 342,
+      "blocks": [
+        {
+          "name": "DANTEWADA",
+          "code": 3618,
+          "activity": 67
+        },
+        {
+          "name": "GIDAM",
+          "code": 3619,
+          "activity": 87
+        },
+        {
+          "name": "KATEKALYAN",
+          "code": 3620,
+          "activity": 121
+        },
+        {
+          "name": "KUAKONDA",
+          "code": 3622,
+          "activity": 67
+        }
+      ]
+    },
+    {
+      "name": "DHAMTARI",
+      "code": 377,
+      "issueQty": 339,
+      "blockActivity": 431,
+      "blocks": [
+        {
+          "name": "DHAMTARI",
+          "code": 3625,
+          "activity": 79
+        },
+        {
+          "name": "KURUD",
+          "code": 3626,
+          "activity": 66
+        },
+        {
+          "name": "MAGARLOD",
+          "code": 3627,
+          "activity": 183
+        },
+        {
+          "name": "NAGRI",
+          "code": 3628,
+          "activity": 103
+        }
+      ]
+    },
+    {
+      "name": "DURG",
+      "code": 378,
+      "issueQty": 854,
+      "blockActivity": 220,
+      "blocks": [
+        {
+          "name": "DHAMDHA",
+          "code": 3632,
+          "activity": 52
+        },
+        {
+          "name": "DURG",
+          "code": 3635,
+          "activity": 103
+        },
+        {
+          "name": "PATAN",
+          "code": 3639,
+          "activity": 65
+        }
+      ]
+    },
+    {
+      "name": "GARIYABAND",
+      "code": 645,
+      "issueQty": 497,
+      "blockActivity": 667,
+      "blocks": [
+        {
+          "name": "CHHURA",
+          "code": 3698,
+          "activity": 163
+        },
+        {
+          "name": "DEVBHOG",
+          "code": 3699,
+          "activity": 71
+        },
+        {
+          "name": "FINGESHWAR",
+          "code": 3701,
+          "activity": 187
+        },
+        {
+          "name": "GARIYABAND",
+          "code": 3702,
+          "activity": 144
+        },
+        {
+          "name": "MAINPUR",
+          "code": 3704,
+          "activity": 102
+        }
+      ]
+    },
+    {
+      "name": "JANJGIR-CHAMPA",
+      "code": 379,
+      "issueQty": 419,
+      "blockActivity": 1327,
+      "blocks": [
+        {
+          "name": "AKALTARA",
+          "code": 3641,
+          "activity": 138
+        },
+        {
+          "name": "BALODA",
+          "code": 3643,
+          "activity": 143
+        },
+        {
+          "name": "BAMHINDIH",
+          "code": 3642,
+          "activity": 179
+        },
+        {
+          "name": "CHAMPA",
+          "code": 3281,
+          "activity": 55
+        },
+        {
+          "name": "DABHARA",
+          "code": 3644,
+          "activity": 161
+        },
+        {
+          "name": "JAIJAIPUR",
+          "code": 3645,
+          "activity": 124
+        },
+        {
+          "name": "JANJGIR",
+          "code": 3277,
+          "activity": 180
+        },
+        {
+          "name": "MALKHARODA",
+          "code": 3646,
+          "activity": 115
+        },
+        {
+          "name": "NAWAGARH",
+          "code": 3647,
+          "activity": 62
+        },
+        {
+          "name": "PAMGARH",
+          "code": 3648,
+          "activity": 46
+        },
+        {
+          "name": "SAKTI",
+          "code": 3649,
+          "activity": 124
+        }
+      ]
+    },
+    {
+      "name": "JASHPUR",
+      "code": 380,
+      "issueQty": 344,
+      "blockActivity": 1182,
+      "blocks": [
+        {
+          "name": "BAGICHA",
+          "code": 3650,
+          "activity": 163
+        },
+        {
+          "name": "DULDULA",
+          "code": 3651,
+          "activity": 193
+        },
+        {
+          "name": "FARSABAHAR",
+          "code": 3657,
+          "activity": 108
+        },
+        {
+          "name": "JASHPUR",
+          "code": 3652,
+          "activity": 140
+        },
+        {
+          "name": "KANSABEL",
+          "code": 3653,
+          "activity": 185
+        },
+        {
+          "name": "KUNKURI",
+          "code": 3654,
+          "activity": 141
+        },
+        {
+          "name": "MANORA",
+          "code": 3655,
+          "activity": 83
+        },
+        {
+          "name": "PATHALGAON",
+          "code": 3656,
+          "activity": 169
+        }
+      ]
+    },
+    {
+      "name": "KABEERDHAM",
+      "code": 382,
+      "issueQty": 287,
+      "blockActivity": 432,
+      "blocks": [
+        {
+          "name": "BODLA",
+          "code": 3665,
+          "activity": 101
+        },
+        {
+          "name": "KAWARDHA",
+          "code": 3666,
+          "activity": 43
+        },
+        {
+          "name": "PANDARIYA",
+          "code": 3667,
+          "activity": 112
+        },
+        {
+          "name": "SAHASPUR LOHARA",
+          "code": 3668,
+          "activity": 176
+        }
+      ]
+    },
+    {
+      "name": "KANKER",
+      "code": 381,
+      "issueQty": 760,
+      "blockActivity": 905,
+      "blocks": [
+        {
+          "name": "ANTAGARH",
+          "code": 3658,
+          "activity": 81
+        },
+        {
+          "name": "BHANUPRATAPPUR",
+          "code": 3659,
+          "activity": 180
+        },
+        {
+          "name": "CHARAMA",
+          "code": 3660,
+          "activity": 28
+        },
+        {
+          "name": "DURGUKONDAL",
+          "code": 3661,
+          "activity": 187
+        },
+        {
+          "name": "KANKER",
+          "code": 3662,
+          "activity": 65
+        },
+        {
+          "name": "KOILEBEDA",
+          "code": 3663,
+          "activity": 130
+        },
+        {
+          "name": "NARHARPUR",
+          "code": 3664,
+          "activity": 45
+        },
+        {
+          "name": "PAKHANJUR",
+          "code": 3354,
+          "activity": 189
+        }
+      ]
+    },
+    {
+      "name": "KONDAGAON",
+      "code": 643,
+      "issueQty": 561,
+      "blockActivity": 587,
+      "blocks": [
+        {
+          "name": "BADERAJPUR",
+          "code": 3590,
+          "activity": 37
+        },
+        {
+          "name": "KESHKAL",
+          "code": 3596,
+          "activity": 172
+        },
+        {
+          "name": "KONDAGAON",
+          "code": 3597,
+          "activity": 136
+        },
+        {
+          "name": "MAKDI",
+          "code": 3599,
+          "activity": 118
+        },
+        {
+          "name": "PHARASGAON",
+          "code": 3602,
+          "activity": 124
+        }
+      ]
+    },
+    {
+      "name": "KORBA",
+      "code": 383,
+      "issueQty": 503,
+      "blockActivity": 556,
+      "blocks": [
+        {
+          "name": "KARTALA",
+          "code": 3669,
+          "activity": 196
+        },
+        {
+          "name": "KATGHORA",
+          "code": 3670,
+          "activity": 156
+        },
+        {
+          "name": "KORBA",
+          "code": 3671,
+          "activity": 46
+        },
+        {
+          "name": "PALI",
+          "code": 3672,
+          "activity": 116
+        },
+        {
+          "name": "POUNDI-UPRODA",
+          "code": 3673,
+          "activity": 42
+        }
+      ]
+    },
+    {
+      "name": "KORIYA",
+      "code": 384,
+      "issueQty": 206,
+      "blockActivity": 748,
+      "blocks": [
+        {
+          "name": "BAIKUNTHPUR",
+          "code": 7144,
+          "activity": 164
+        },
+        {
+          "name": "BHARATPUR",
+          "code": 3675,
+          "activity": 188
+        },
+        {
+          "name": "KHADGANVA",
+          "code": 3676,
+          "activity": 116
+        },
+        {
+          "name": "MANENDRAGARH",
+          "code": 3677,
+          "activity": 157
+        },
+        {
+          "name": "SONHAT",
+          "code": 3678,
+          "activity": 123
+        }
+      ]
+    },
+    {
+      "name": "MAHASAMUND",
+      "code": 385,
+      "issueQty": 149,
+      "blockActivity": 602,
+      "blocks": [
+        {
+          "name": "BAGBAHRA",
+          "code": 3679,
+          "activity": 181
+        },
+        {
+          "name": "BASNA",
+          "code": 3680,
+          "activity": 140
+        },
+        {
+          "name": "MAHASAMUND",
+          "code": 3681,
+          "activity": 184
+        },
+        {
+          "name": "PITHORA",
+          "code": 3682,
+          "activity": 70
+        },
+        {
+          "name": "SARAIPALI",
+          "code": 3683,
+          "activity": 27
+        }
+      ]
+    },
+    {
+      "name": "MUNGELI",
+      "code": 647,
+      "issueQty": 902,
+      "blockActivity": 347,
+      "blocks": [
+        {
+          "name": "LORMI",
+          "code": 3608,
+          "activity": 30
+        },
+        {
+          "name": "MUNGELI",
+          "code": 3611,
+          "activity": 161
+        },
+        {
+          "name": "PATHARIYA",
+          "code": 3612,
+          "activity": 156
+        }
+      ]
+    },
+    {
+      "name": "NARAYANPUR",
+      "code": 637,
+      "issueQty": 671,
+      "blockActivity": 190,
+      "blocks": [
+        {
+          "name": "NARAYANPUR",
+          "code": 3600,
+          "activity": 83
+        },
+        {
+          "name": "ORCHHA",
+          "code": 3601,
+          "activity": 107
+        }
+      ]
+    },
+    {
+      "name": "RAIGARH",
+      "code": 386,
+      "issueQty": 263,
+      "blockActivity": 1211,
+      "blocks": [
+        {
+          "name": "BARAMKELA",
+          "code": 3684,
+          "activity": 67
+        },
+        {
+          "name": "GHARGHODA",
+          "code": 3686,
+          "activity": 193
+        },
+        {
+          "name": "KHARSIA",
+          "code": 3687,
+          "activity": 26
+        },
+        {
+          "name": "LAILUNGA",
+          "code": 3688,
+          "activity": 160
+        },
+        {
+          "name": "PUSOUR",
+          "code": 3689,
+          "activity": 193
+        },
+        {
+          "name": "RAIGARH",
+          "code": 3690,
+          "activity": 195
+        },
+        {
+          "name": "SARANGARH",
+          "code": 3691,
+          "activity": 126
+        },
+        {
+          "name": "TAMNAR",
+          "code": 3692,
+          "activity": 74
+        },
+        {
+          "name": "UDAIPUR (DHARAMJAIGARH)",
+          "code": 3685,
+          "activity": 177
+        }
+      ]
+    },
+    {
+      "name": "RAIPUR",
+      "code": 387,
+      "issueQty": 913,
+      "blockActivity": 393,
+      "blocks": [
+        {
+          "name": "ABHANPUR",
+          "code": 3693,
+          "activity": 165
+        },
+        {
+          "name": "ARANG",
+          "code": 3694,
+          "activity": 39
+        },
+        {
+          "name": "DHARSIWA",
+          "code": 3700,
+          "activity": 30
+        },
+        {
+          "name": "RAIPUR",
+          "code": 3332,
+          "activity": 80
+        },
+        {
+          "name": "TILDA",
+          "code": 3707,
+          "activity": 79
+        }
+      ]
+    },
+    {
+      "name": "RAJNANDGAON",
+      "code": 388,
+      "issueQty": 556,
+      "blockActivity": 1248,
+      "blocks": [
+        {
+          "name": "A.CHOWKI (TD)",
+          "code": 3708,
+          "activity": 95
+        },
+        {
+          "name": "AMBAGARH",
+          "code": 3310,
+          "activity": 126
+        },
+        {
+          "name": "CHHUIKHADAN",
+          "code": 3709,
+          "activity": 155
+        },
+        {
+          "name": "CHHURIYA",
+          "code": 3710,
+          "activity": 45
+        },
+        {
+          "name": "DONGARGAON",
+          "code": 3711,
+          "activity": 30
+        },
+        {
+          "name": "DONGARGARH",
+          "code": 3712,
+          "activity": 195
+        },
+        {
+          "name": "KHAIRAGARH",
+          "code": 3713,
+          "activity": 155
+        },
+        {
+          "name": "MANPUR",
+          "code": 3714,
+          "activity": 137
+        },
+        {
+          "name": "MOHLA",
+          "code": 3715,
+          "activity": 137
+        },
+        {
+          "name": "RAJNANDGAON",
+          "code": 3716,
+          "activity": 173
+        }
+      ]
+    },
+    {
+      "name": "SUKMA",
+      "code": 642,
+      "issueQty": 493,
+      "blockActivity": 303,
+      "blocks": [
+        {
+          "name": "CHHINDGARH",
+          "code": 3617,
+          "activity": 88
+        },
+        {
+          "name": "KONTA",
+          "code": 3621,
+          "activity": 86
+        },
+        {
+          "name": "SUKMA",
+          "code": 3623,
+          "activity": 129
+        }
+      ]
+    },
+    {
+      "name": "SURAJPUR",
+      "code": 648,
+      "issueQty": 938,
+      "blockActivity": 649,
+      "blocks": [
+        {
+          "name": "BHAIYATHAN",
+          "code": 3720,
+          "activity": 125
+        },
+        {
+          "name": "ODGI",
+          "code": 3725,
+          "activity": 117
+        },
+        {
+          "name": "PRATAPPUR",
+          "code": 3726,
+          "activity": 169
+        },
+        {
+          "name": "PREMNAGAR",
+          "code": 3727,
+          "activity": 36
+        },
+        {
+          "name": "RAMANUJNAGAR",
+          "code": 3729,
+          "activity": 89
+        },
+        {
+          "name": "SURAJPUR",
+          "code": 3733,
+          "activity": 113
+        }
+      ]
+    },
+    {
+      "name": "SURGUJA",
+      "code": 389,
+      "issueQty": 901,
+      "blockActivity": 761,
+      "blocks": [
+        {
+          "name": "AMBIKAPUR",
+          "code": 3717,
+          "activity": 54
+        },
+        {
+          "name": "BATOULI",
+          "code": 3719,
+          "activity": 151
+        },
+        {
+          "name": "LAKHANPUR",
+          "code": 3722,
+          "activity": 56
+        },
+        {
+          "name": "LUNDRA",
+          "code": 3723,
+          "activity": 73
+        },
+        {
+          "name": "MAINPAT",
+          "code": 3724,
+          "activity": 178
+        },
+        {
+          "name": "SITAPUR",
+          "code": 3732,
+          "activity": 125
+        },
+        {
+          "name": "UDAYPUR",
+          "code": 3734,
+          "activity": 124
+        }
+      ]
+    }
+  ]
+}
