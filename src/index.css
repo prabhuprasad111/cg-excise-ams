@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-cg-green-950: #052e1f;
+  --color-cg-green-900: #0a3d2a;
+  --color-cg-green-800: #0f4d36;
+  --color-cg-green-700: #16634a;
+  --color-cg-gold-400: #d4af37;
+  --color-cg-gold-500: #c9a227;
+  --color-cg-cream: #f4f1e8;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  html {
+    color-scheme: light;
+  }
+  html {
+    overflow-x: hidden;
+  }
+  body {
+    @apply bg-[var(--color-cg-cream)] text-slate-900 antialiased font-sans min-h-screen overflow-x-hidden;
+    @apply transition-colors duration-300;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Prevent flex children from forcing horizontal scroll */
+.content-surface,
+.page-enter {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.chart-shell {
+  position: relative;
+}
+.chart-shell > div,
+.chart-shell .echarts-for-react {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0;
+}
+
+/* Swiper: touch-friendly on phones */
+.chhattisgarh-swiper .swiper-button-next,
+.chhattisgarh-swiper .swiper-button-prev {
+  width: 2rem;
+  height: 2rem;
+}
+@media (max-width: 639px) {
+  .chhattisgarh-swiper .swiper-button-next,
+  .chhattisgarh-swiper .swiper-button-prev {
+    display: none;
+  }
+  .content-surface h1,
+  .content-surface .page-title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .brand-table th,
+  .brand-table td {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Page titles & breadcrumbs on cream */
+.content-surface h1,
+.content-surface .page-title {
+  color: var(--color-cg-green-900) !important;
+}
+.content-surface .page-lead {
+  color: #475569 !important;
+}
+
+/* White cards & panels (all screens) */
+.panel-card,
+.brand-card {
+  background-color: #ffffff;
+  border-color: rgb(209 250 229);
+}
+
+/* Form controls: white bg, emerald border (screenshot 1) */
+.brand-input,
+input.brand-input,
+select.brand-input,
+textarea.brand-input,
+.content-surface input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+.content-surface select,
+.content-surface textarea {
+  background-color: #ffffff;
+  color: #0f172a;
+  border-color: rgba(167, 243, 208, 0.85);
+}
+.content-surface input::placeholder,
+.content-surface textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* Data tables */
+.brand-table {
+  border-color: rgb(209 250 229);
+}
+.brand-table thead {
+  background-color: rgba(236, 253, 245, 0.85);
+}
+.brand-table thead th {
+  color: var(--color-cg-green-900);
+}
+.brand-table tbody {
+  background-color: #ffffff;
+}
+.brand-table tbody td {
+  color: #334155;
+}
+.brand-table tbody tr:hover {
+  background-color: rgba(236, 253, 245, 0.45);
+}
+.brand-table-empty {
+  background-color: #ffffff;
+  border-color: rgb(167 243 208);
+  color: #64748b;
+}
+
+/* Sidebar: always brand green */
+.brand-sidebar {
+  background-color: var(--color-cg-green-900);
+  border-color: rgba(16, 78, 54, 0.35);
+  color: #ecfdf5;
+}
+
+/* Top bar: always light */
+.brand-header {
+  background-color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(167, 243, 208, 0.55);
+}
+
+/* smooth page transitions */
+.page-enter {
+  animation: fadeSlide 0.35s ease-out;
+}
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
